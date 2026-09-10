@@ -312,7 +312,7 @@ footer a { color: var(--muted); }
 
 /* ---------- the people (reuses the weekday dot-stack) ---------- */
 .people .dots { min-height: 0; }
-.people { row-gap: 2rem; margin-top: 2.5rem; }
+.people { row-gap: 2rem; margin-top: 2.5rem; justify-content: center; }
 .people .dot { cursor: pointer; }
 .weekdays.people + .caption { margin-top: 1.5rem; }
 
@@ -327,3 +327,9 @@ footer a { color: var(--muted); }
 }
 .hours-row .viz { flex: 0 1 440px; min-width: 300px; margin: 0; }
 .hours-row .weekdays { margin-top: 0; flex: 0 0 auto; }
+.hours-days {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.hours-days .caption { margin-top: 1.25rem; text-align: center; }

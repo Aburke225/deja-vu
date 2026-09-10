@@ -75,7 +75,7 @@
       el('line', { x1: L, y1: BASE, x2: R, y2: BASE, stroke: LINE, 'stroke-width': 1 }, svg);
       E.forEach(function (e) {
         var x = X(date(e).getTime());
-        var h = 34 + (e.hour >= 22 || e.hour < 4 ? 18 : 0);
+        var h = 44; // uniform ticks — time-of-day gets its own section
         el('line', { x1: x + 2, y1: BASE - h + 3, x2: x + 2, y2: BASE, stroke: MUTEDP, 'stroke-width': 2 }, svg);
         var s = el('line', { x1: x, y1: BASE - h, x2: x, y2: BASE, stroke: PRESENCE, 'stroke-width': 2 }, svg);
         hoverable(s, e);
@@ -101,7 +101,7 @@
       });
       E.forEach(function (e) {
         var y = Y(date(e).getTime());
-        var h = 60 + (e.hour >= 22 || e.hour < 4 ? 26 : 0);
+        var h = 72; // uniform ticks — time-of-day gets its own section
         el('line', { x1: BASEx, y1: y + 2, x2: BASEx + h - 3, y2: y + 2, stroke: MUTEDP, 'stroke-width': 2 }, svgv);
         var s = el('line', { x1: BASEx, y1: y, x2: BASEx + h, y2: y, stroke: PRESENCE, 'stroke-width': 2 }, svgv);
         hoverable(s, e);
@@ -242,7 +242,7 @@
       });
     });
     // legend
-    txt(el('text', { x: 30, y: 415, 'class': 'svg-label' }, svg), '● bright = while gaming (18 of 40) · ● faded = everything else');
+    txt(el('text', { x: 30, y: 415, 'class': 'svg-label' }, svg), '● bright = games (18 of 40) · ● faded = everything else');
   })();
 
   // ---------- 6. away games (arcs) ----------
