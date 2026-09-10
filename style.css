@@ -315,3 +315,15 @@ footer a { color: var(--muted); }
 .people { row-gap: 2rem; margin-top: 2.5rem; }
 .people .dot { cursor: pointer; }
 .weekdays.people + .caption { margin-top: 1.5rem; }
+
+/* ---------- the hours: dial and weekday strip side by side ---------- */
+.hours-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3.5rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+.hours-row .viz { flex: 0 1 440px; min-width: 300px; margin: 0; }
+.hours-row .weekdays { margin-top: 0; flex: 0 0 auto; }
