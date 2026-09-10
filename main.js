@@ -50,21 +50,7 @@
   }
   document.addEventListener('click', hideTip);
 
-  // ---------- 1. hero tick strip ----------
-  (function () {
-    var svg = document.getElementById('tickstrip');
-    if (!svg) return;
-    var W = 1000, H = 52;
-    svg.setAttribute('viewBox', '0 0 ' + W + ' ' + H);
-    E.forEach(function (e, i) {
-      var x = 8 + (W - 16) * i / (E.length - 1);
-      el('line', { x1: x + 1.5, y1: 14, x2: x + 1.5, y2: 44, stroke: MUTEDP, 'stroke-width': 2 }, svg);
-      var t = el('line', { x1: x, y1: 12, x2: x, y2: 42, stroke: PRESENCE, 'stroke-width': 2 }, svg);
-      hoverable(t, e);
-    });
-  })();
-
-  // ---------- 2. the pulse (seismogram) ----------
+  // ---------- the pulse (seismogram) ----------
   function renderPulse() {
     var host = document.getElementById('pulse');
     if (!host) return;

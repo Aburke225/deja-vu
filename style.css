@@ -114,8 +114,6 @@ h2 {
   color: var(--muted);
   margin: 0 0 2.25rem;
 }
-#tickstrip { width: 100%; height: 52px; display: block; margin: 0 0 2rem; }
-
 .stats {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(126px, 1fr));
