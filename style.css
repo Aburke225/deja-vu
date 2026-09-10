@@ -118,7 +118,7 @@ h2 {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(126px, 1fr));
   gap: 0.75rem;
-  margin-bottom: 1rem;
+  margin: 1.5rem 0 2rem;
 }
 .stat {
   background: var(--surface);
@@ -312,4 +312,6 @@ footer a { color: var(--muted); }
 
 /* ---------- the people (reuses the weekday dot-stack) ---------- */
 .people .dots { min-height: 0; }
-.people { row-gap: 1.5rem; }
+.people { row-gap: 2rem; margin-top: 2.5rem; }
+.people .dot { cursor: pointer; }
+.weekdays.people + .caption { margin-top: 1.5rem; }

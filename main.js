@@ -209,7 +209,7 @@
     el('ellipse', { cx: 240, cy: 210, rx: 220, ry: 180, fill: 'none', stroke: LINE, 'stroke-width': 1.25 }, svg);
     el('ellipse', { cx: 200, cy: 235, rx: 125, ry: 105, fill: 'rgba(139,125,232,0.06)', stroke: LINE, 'stroke-width': 1 }, svg);
     txt(el('text', { x: 240, y: 52, 'text-anchor': 'middle', 'class': 'svg-label strong' }, svg), 'home, SF — 28');
-    txt(el('text', { x: 200, y: 168, 'text-anchor': 'middle', 'class': 'svg-label strong' }, svg), 'at the desk — 16');
+    txt(el('text', { x: 200, y: 168, 'text-anchor': 'middle', 'class': 'svg-label strong' }, svg), 'at my desk — 16');
     txt(el('text', { x: 545, y: 52, 'text-anchor': 'middle', 'class': 'svg-label strong' }, svg), 'elsewhere — 12');
     // deterministic row layout inside each region
     function layoutRows(list, cx, cy, perRow) {
@@ -316,6 +316,11 @@
       void twin.offsetWidth;
       twin.classList.add('flash');
     });
+  });
+
+  // the people dots share the same tooltip as the setting's dots
+  document.querySelectorAll('.people .dot[data-i]').forEach(function (dot) {
+    hoverable(dot, E[+dot.getAttribute('data-i')]);
   });
 
   renderPulse();
