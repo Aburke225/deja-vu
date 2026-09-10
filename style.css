@@ -299,10 +299,15 @@ section { padding: 3.25rem 0 1rem; }
 .tip .when { font-family: var(--font-mono); font-size: 0.7rem; color: var(--muted); display: block; }
 
 /* ---------- footer / colophon ---------- */
+/* the rule line sits above the ledger instead of above the footer */
+.ledger-section {
+  border-top: 1px solid var(--line);
+  margin-top: 2rem;
+}
+
 footer {
   margin-top: 3.5rem;
   padding: 1.5rem 0 3rem;
-  border-top: 1px solid var(--line);
   font-family: var(--font-mono);
   font-size: 0.78rem;
   color: var(--muted);
