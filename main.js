@@ -222,7 +222,7 @@
     // regions
     el('ellipse', { cx: 240, cy: 210, rx: 220, ry: 180, fill: 'none', stroke: LINE, 'stroke-width': 1.25 }, svg);
     el('ellipse', { cx: 200, cy: 235, rx: 125, ry: 105, fill: 'rgba(139,125,232,0.06)', stroke: LINE, 'stroke-width': 1 }, svg);
-    txt(el('text', { x: 240, y: 52, 'text-anchor': 'middle', 'class': 'svg-label strong' }, svg), 'home (SF) — 28');
+    txt(el('text', { x: 240, y: 52, 'text-anchor': 'middle', 'class': 'svg-label strong' }, svg), 'home, SF — 28');
     txt(el('text', { x: 200, y: 168, 'text-anchor': 'middle', 'class': 'svg-label strong' }, svg), 'at the desk — 16');
     txt(el('text', { x: 545, y: 52, 'text-anchor': 'middle', 'class': 'svg-label strong' }, svg), 'elsewhere — 12');
     // deterministic row layout inside each region
@@ -265,7 +265,8 @@
     if (!host) return;
     var away = E.filter(function (e) { return e.ptype !== 'home'; });
     // rough distance order from SF
-    var order = ['in uber', 'dim sum', 'hot pot', "simone's house", 'ny home', "opa's", 'Munich', 'Salzburg', 'Interalpen'];
+    // rough distance from SF, nearest first: two SF spots, then LA, then east
+    var order = ['in uber', 'hot pot', 'dim sum', "simone's house", 'home, ny', "opa's", 'Munich', 'Salzburg', 'Interalpen'];
     function rank(e) {
       var s = (e.place + ' ' + e.context).toLowerCase();
       for (var i = 0; i < order.length; i++) if (s.indexOf(order[i].toLowerCase()) >= 0) return i;
@@ -304,7 +305,7 @@
       var isInter = key === 'Interalpen';
       el('circle', { cx: x, cy: BASE, r: 5, fill: isInter ? ECHO : PRESENCE }, svg);
       if (isInter) el('circle', { cx: x, cy: BASE, r: 11, fill: 'none', stroke: ECHO, 'stroke-width': 1 }, svg);
-      var label = key === 'ny home' ? 'NY home'
+      var label = key === 'home, NY' ? 'home, NY'
         : key.indexOf('uber') >= 0 ? 'an Uber, SF'
         : key.indexOf('hot pot') >= 0 ? 'hot pot, SF'
         : key.indexOf('dim sum') >= 0 ? 'dim sum, LA'
