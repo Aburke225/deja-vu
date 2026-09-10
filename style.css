@@ -302,7 +302,7 @@ section { padding: 3.25rem 0 1rem; }
 /* the rule line sits above the ledger instead of above the footer */
 .ledger-section {
   border-top: 1px solid var(--line);
-  margin-top: 2rem;
+  margin-top: 4.5rem;
 }
 
 footer {
