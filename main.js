@@ -57,7 +57,6 @@
     host.innerHTML = '';
     var vertical = window.innerWidth < 640;
     var years = [2023, 2024, 2025, 2026];
-    var counts = DATA.stats.per_year;
 
     if (!vertical) {
       var W = 1100, H = 200, L = 10, R = 1090, BASE = 120;
@@ -70,7 +69,7 @@
         var b = Math.min(T1, new Date(y + 1, 0, 1).getTime());
         if (y === 2023) a = T0;
         el('rect', { x: X(a), y: 24, width: X(b) - X(a), height: 132, fill: y % 2 ? 'rgba(139,125,232,0.045)' : 'none' }, svg);
-        txt(el('text', { x: (X(a) + X(b)) / 2, y: 190, 'text-anchor': 'middle', 'class': 'svg-label' }, svg), y + ' — ' + counts[y]);
+        txt(el('text', { x: (X(a) + X(b)) / 2, y: 190, 'text-anchor': 'middle', 'class': 'svg-label' }, svg), String(y));
       });
       el('line', { x1: L, y1: BASE, x2: R, y2: BASE, stroke: LINE, 'stroke-width': 1 }, svg);
       E.forEach(function (e) {
@@ -97,7 +96,7 @@
       el('line', { x1: BASEx, y1: TOPv, x2: BASEx, y2: BOTv, stroke: LINE, 'stroke-width': 1 }, svgv);
       years.forEach(function (y) {
         var a = Math.max(T0, new Date(y, 0, 1).getTime());
-        txt(el('text', { x: 10, y: Y(a) + 14, 'class': 'svg-label strong' }, svgv), y + ' — ' + counts[y]);
+        txt(el('text', { x: 10, y: Y(a) + 14, 'class': 'svg-label strong' }, svgv), String(y));
       });
       E.forEach(function (e) {
         var y = Y(date(e).getTime());
