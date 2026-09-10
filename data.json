@@ -910,6 +910,23 @@
     2025,
     2026
    ]
-  }
+  },
+  "people": {
+   "nick": 4,
+   "annabell": 3,
+   "simone": 3,
+   "dadda": 2,
+   "david": 2,
+   "ryan": 2,
+   "trevor": 2,
+   "chadam": 1,
+   "jason": 1,
+   "john": 1,
+   "josh": 1,
+   "oma": 1,
+   "opa": 1,
+   "spruha": 1
+  },
+  "alone_count": 24
  }
 }

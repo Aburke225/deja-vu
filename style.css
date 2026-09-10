@@ -311,3 +311,7 @@ footer {
 }
 footer p { margin: 0 0 0.4rem; }
 footer a { color: var(--muted); }
+
+/* ---------- the people (reuses the weekday dot-stack) ---------- */
+.people .dots { min-height: 0; }
+.people { row-gap: 1.5rem; }
