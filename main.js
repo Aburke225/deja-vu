@@ -259,7 +259,8 @@
     }
     away.sort(function (a, b) { return rank(a) - rank(b); });
     var W = 1000, H = 360, BASE = 300, X0 = 60;
-    var svg = el('svg', { viewBox: '0 0 ' + W + ' ' + H });
+    // crop the empty sky above the tallest arc (its apex sits near y=160)
+    var svg = el('svg', { viewBox: '0 145 ' + W + ' ' + (H - 145) });
     host.appendChild(svg);
     el('line', { x1: 20, y1: BASE, x2: W - 20, y2: BASE, stroke: LINE, 'stroke-width': 1 }, svg);
     txt(el('text', { x: X0, y: BASE + 24, 'text-anchor': 'middle', 'class': 'svg-label strong' }, svg), 'home, SF');
