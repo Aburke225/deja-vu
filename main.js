@@ -329,4 +329,17 @@
     clearTimeout(rt);
     rt = setTimeout(renderPulse, 200);
   });
+
+  // lift the boot veil (index.html adds .booting before first paint): the
+  // charts are built by now - wait only for the webfonts, capped so a slow
+  // font CDN can't hold the page; index.html's 3s timeout is the fallback
+  // removed directly, not in requestAnimationFrame: rAF callbacks do not run
+  // in a hidden tab, which would hold the veil for anyone who opens the site
+  // in a background tab until the inline fallback fires
+  var lift = function () { document.documentElement.classList.remove('booting'); };
+  try {
+    if (document.fonts && document.fonts.ready) {
+      Promise.race([document.fonts.ready, new Promise(function (r) { setTimeout(r, 1200); })]).then(lift, lift);
+    } else { lift(); }
+  } catch (e) { lift(); }
 })();

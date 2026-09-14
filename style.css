@@ -40,7 +40,10 @@ body {
 
 a { color: var(--presence-text); text-underline-offset: 3px; }
 
-.wrap { max-width: var(--wide); margin: 0 auto; padding: 0 1.25rem; }
+.wrap { max-width: var(--wide); margin: 0 auto; padding: 0 1.25rem; opacity: 1; transition: opacity 0.18s ease; }
+/* boot veil: index.html adds .booting before first paint; main.js removes it
+   once the charts are built and the fonts land, so the page fades in whole */
+.booting .wrap { opacity: 0; transition: none; }
 .prose { max-width: var(--measure); }
 
 /* ---------- ghost device ---------- */
